@@ -45,26 +45,19 @@ def wallis(n):
     pi *= 2
     return pi
 
-def monte_carlo(INTERVAL):
-    circle_points= 0
-    square_points= 0
-  
-    for i in range(INTERVAL**2):
-  
-    
-        rand_x= random.uniform(-1, 1)
-        rand_y= random.uniform(-1, 1)
-  
+def monte_carlo(n):
+    circle=0
 
-        origin_dist= rand_x**2 + rand_y**2
-  
-        if origin_dist<= 1:
-            circle_points+= 1
-  
-        square_points+= 1
-  
-        pi = 4* circle_points/ square_points
-    return pi
+for i in range(n):
+    x=random.random()
+    y=random.random()
+   
+    r=math.sqrt(pow(x,2)+pow(y,2))
+    
+    if r<=1:
+        circle=circle+1
+return (4*(circle/n))
+    
 
 if __name__ == "__main__":
     unittest.main()
